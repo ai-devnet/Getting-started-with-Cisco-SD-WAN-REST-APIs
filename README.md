@@ -1,4 +1,4 @@
-# Getting-started-with-Cisco-SD-WAN-REST-APIs
+# Getting started with Cisco SD WAN REST APIs
 
 The Cisco SD-WAN Solution is a cloud-delivered overlay WAN architecture that facilitates digital and cloud transformation for enterprises. It significantly reduces WAN costs and time to deploy new services.
 
@@ -86,11 +86,10 @@ Look at the available templates. Each template will provide the number of device
 OUTPUT
 
 Retrieving the templates available.
-╒══════════════════════╤═══════════════╤══════════════════════════════════════╤════════════════════╤════════════════════╕
-│ Template Name        │ Device Type   │ Template ID                          │   Attached devices │   Template version │
-╞══════════════════════╪═══════════════╪══════════════════════════════════════╪════════════════════╪════════════════════╡
-│ VEDGE_BASIC_TEMPLATE │ vedge-cloud   │ 72babaf2-68b6-4176-92d5-fa8de58e19d8 │                  0 │                 15 │
-╘══════════════════════╧═══════════════╧══════════════════════════════════════╧════════════════════╧════════════════════╛
+
+| Template Name        | Device Type   | Template ID                          |   Attached devices |   Template version |
+|----------------------|---------------|--------------------------------------|--------------------|--------------------|
+| VEDGE_BASIC_TEMPLATE | vedge-cloud   | 72babaf2-68b6-4176-92d5-fa8de58e19d8 |                  0 |                 15 |
 
 Retrieve the list of devices that make up the SD-WAN fabric with ./sdwan.py device_list.
 
@@ -98,23 +97,16 @@ $ ./sdwan.py device_list
 
 OUTPUT
 Retrieving the devices.
-╒═════════════╤═══════════════╤══════════════════════════════════════╤═════════════╤═══════════╤═══════════╤════════════════╕
-│ Host-Name   │ Device Type   │ Device ID                            │ System IP   │   Site ID │ Version   │ Device Model   │
-╞═════════════╪═══════════════╪══════════════════════════════════════╪═════════════╪═══════════╪═══════════╪════════════════╡
-│ vmanage     │ vmanage       │ 4854266f-a8ad-4068-9651-d4e834384f51 │ 4.4.4.90    │       100 │ 18.3.1.1  │ vmanage        │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vsmart      │ vsmart        │ da6c566f-eb5f-4731-a89a-ff745661027c │ 4.4.4.70    │       100 │ 18.3.0    │ vsmart         │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vbond       │ vbond         │ 455407de-9327-467e-a0d2-d3444659dbb2 │ 4.4.4.80    │       100 │ 18.3.1    │ vedge-cloud    │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vedge01     │ vedge         │ 4af9e049-0052-47e9-83af-81a5825f7ffe │ 4.4.4.60    │       200 │ 18.3.1    │ vedge-cloud    │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vedge02     │ vedge         │ f3d4159b-4172-462c-9c8d-8db76c31521d │ 4.4.4.61    │       300 │ 18.3.1    │ vedge-cloud    │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vedge03     │ vedge         │ 100faff9-8b36-4312-bf97-743b26bd0211 │ 4.4.4.62    │       400 │ 18.3.1    │ vedge-cloud    │
-├─────────────┼───────────────┼──────────────────────────────────────┼─────────────┼───────────┼───────────┼────────────────┤
-│ vedge04     │ vedge         │ 46c18a49-f6f3-4588-a49a-0b1cc387f179 │ 4.4.4.63    │       500 │ 18.3.1    │ vedge-cloud    │
-╘═════════════╧═══════════════╧══════════════════════════════════════╧═════════════╧═══════════╧═══════════╧════════════════╛
+
+| Host-Name   | Device Type   | Device ID                            | System IP   |   Site ID | Version   | Device Model   |
+|-------------|---------------|--------------------------------------|-------------|-----------|-----------|----------------|
+| vmanage     | vmanage       | 4854266f-a8ad-4068-9651-d4e834384f51 | 4.4.4.90    |       100 | 18.3.1.1  | vmanage        |
+| vsmart      | vsmart        | da6c566f-eb5f-4731-a89a-ff745661027c | 4.4.4.70    |       100 | 18.3.0    | vsmart         |
+| vbond       | vbond         | 455407de-9327-467e-a0d2-d3444659dbb2 | 4.4.4.80    |       100 | 18.3.1    | vedge-cloud    |
+| vedge01     | vedge         | 4af9e049-0052-47e9-83af-81a5825f7ffe | 4.4.4.60    |       200 | 18.3.1    | vedge-cloud    |
+| vedge02     | vedge         | f3d4159b-4172-462c-9c8d-8db76c31521d | 4.4.4.61    |       300 | 18.3.1    | vedge-cloud    |
+| vedge03     | vedge         | 100faff9-8b36-4312-bf97-743b26bd0211 | 4.4.4.62    |       400 | 18.3.1    | vedge-cloud    |
+| vedge04     | vedge         | 46c18a49-f6f3-4588-a49a-0b1cc387f179 | 4.4.4.63    |       500 | 18.3.1    | vedge-cloud    |
 
 Attaching a template is as easy as calling the attach option of the application and passing in the requested parameters.
 
