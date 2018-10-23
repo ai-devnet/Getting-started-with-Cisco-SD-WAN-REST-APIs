@@ -51,9 +51,11 @@ Setup local environment variables for your Cisco SD-WAN fabric. Provide the info
 
 Examples:
 
-export SDWAN_IP=10.10.30.190
-export SDWAN_USERNAME=admin
-export SDWAN_PASSWORD=admin
+`export SDWAN_IP=10.10.30.190`
+
+`export SDWAN_USERNAME=admin`
+
+`export SDWAN_PASSWORD=admin`
 
 # Using the application
 
