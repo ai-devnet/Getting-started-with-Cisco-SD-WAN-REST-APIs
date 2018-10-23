@@ -117,3 +117,7 @@ Attaching a template is as easy as calling the attach option of the application 
 To detach a template from a specific device you need to call the detach option of the application and pass in the parameters for the target device ID and the system-ip of that device:
 
 `./sdwan.py detach --target TargetID --sysip 1.1.1.1`
+
+# POSTMAN
+
+I've also included a POSTMAN environment and collection in the `postman` folder.
