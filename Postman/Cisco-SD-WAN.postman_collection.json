@@ -116,6 +116,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Interface statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{vmanage}}:{{port}}/dataservice/statistics/interface",
+							"protocol": "https",
+							"host": [
+								"{{vmanage}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"dataservice",
+								"statistics",
+								"interface"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
