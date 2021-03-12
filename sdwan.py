@@ -49,6 +49,7 @@ class rest_api_lib:
 
         #Url for posting login data
         login_url = base_url_str + login_action
+        token_url = base_url_str + 'dataservice/client/token'
         url = base_url_str + login_url
 
         sess = requests.session()
@@ -60,7 +61,16 @@ class rest_api_lib:
             print ("Login Failed")
             sys.exit(0)
 
-        self.session[vmanage_ip] = sess
+        # update token to session headers
+        login_token = sess.get(url=token_url, verify=False)
+
+        if login_token.status_code == 200:
+            if b'<html>' in login_token.content:
+                print("Login Token Failed")
+                exit(0)
+
+            sess.headers['X-XSRF-TOKEN'] = login_token.content
+            self.session[vmanage_ip] = sess
 
     def get_request(self, mount_point):
         """GET request"""
